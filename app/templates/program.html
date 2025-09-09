@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{%block content%}
+
+<!-- Intro -->
+<div id="intro">
+    <h1>Programme</h1>
+    <p>Un parcours clair du premier contact avec l’eau jusqu’aux premières nages.</p>
+    <ul class="actions">
+        <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+    </ul>
+</div>
+
+<!-- Header -->
+<header id="header">
+    <a href="{{ url_for('main.index') }}" class="logo">Natation Pour Tous</a>
+</header>
+
+<!-- Nav -->
+<nav id="nav">
+    <ul class="links">
+        <li><a href="{{ url_for('main.index') }}">Acceuil</a></li>
+        <li class="active"><a href="{{ url_for('main.program') }}">Programmes</a></li>
+        <li><a href="{{ url_for('main.contact') }}">Contact</a></li>
+    </ul>
+    <ul class="icons">
+        <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+        <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+        <li><a href="#" class="icon brands fa-whatsapp"><span class="label">Whatsapp</span></a></li>
+    </ul>
+</nav>
+
+<!-- Main -->
+<div id="main">
+    <div class="carousel">
+        <ul class="carousel__list posts">
+            <article class="carousel__item" data-pos="-2">
+                <header>
+                    <span class="date">niveau 4</span>
+                    <h2><a href="#">🐬 Dauphin. Je nage</a></h2>
+                </header>
+                <a href="#" class="image fit"><img src="{{ url_for('static', filename='images/niv04.jpg') }}" alt="" /></a>
+                <p>Autonomie aquatique complète et apprentissage des techniques de base (crawl, dos, papillon)</p>
+                <ul class="actions special">
+                    <li><a href="#" class="button">Voir Plus</a></li>
+                </ul>
+            </article>
+            <article class="carousel__item" data-pos="-1">
+                <header>
+                    <span class="date">01</span>
+                    <h2><a href="#">AUTRE SPECIALE</a></h2>
+                </header>
+                <a href="#" class="image fit"><img src="{{ url_for('static', filename='images/niv04.jpg') }}" alt="" /></a>
+                <p>Autonomie aquatique complète et apprentissage des techniques de base (crawl, dos, papillon)</p>
+                <ul class="actions special">
+                    <li><a href="#" class="button">Voir Plus</a></li>
+                </ul>
+            </article>
+            <article class="carousel__item" data-pos="0">
+                <header>
+                    <span class="date">niveau 1</span>
+                    <h2><a href="#">⭐ Starfish. Je m’adapte</a></h2>
+                </header>
+                <a href="#" class="image fit"><img src="{{ url_for('static', filename='images/niv01.jpg') }}" alt="" /></a>
+                <p>Découverte du milieu aquatique, des activités et des jeux pour apprendre en s’amusant..</p>
+                <ul class="actions special">
+                    <li><a href="#" class="button">Voir Plus</a></li>
+                </ul>
+            </article>
+            <article class="carousel__item" data-pos="1">
+                <header>
+                    <span class="date">Niveau 2</span>
+                    <h2><a href="#">🐸Grenouille. Je decouvre</a></h2>
+                </header>
+                <a href="#" class="image fit"><img src="{{ url_for('static', filename='images/niv02.jpg') }}" alt="" /></a>
+                <p>Familiarisation avec le milieu aquatique en réalisant les premières actions en petite profondeur.</p>
+                <ul class="actions special">
+                    <li><a href="#" class="button">Voir Plus</a></li>
+                </ul>
+            </article>
+            <article class="carousel__item" data-pos="2">
+                <header>
+                    <span class="date">niveau 3</span>
+                    <h2><a href="#">🐟 Poisson. J’apprends</a></h2>
+                </header>
+                <a href="#" class="image fit"><img src="{{ url_for('static', filename='images/niv03.jpg') }}" alt="" /></a>
+                <p>Déplacements en autonomie en grande profondeur, premières vraies sensations de nage.</p>
+                <ul class="actions special">
+                    <li><a href="#" class="button">Voir Plus</a></li>
+                </ul>
+            </article>
+        </ul>
+    </div>
+</div>
+
+<div id="main">
+    <div class="col-6 col-12-small">
+        <ul class="actions stacked">
+            <li><a href="#" class="button primary fit">Reservez via Whatsapp</a></li>
+        </ul>
+    </div>
+</div>
+
+{%endblock%}
+
+{%block scripts%}
+<script src="{{ url_for('static', filename='assets/js/carousel.js') }}"></script>
+{%endblock%}
