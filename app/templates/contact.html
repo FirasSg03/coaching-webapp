@@ -60,15 +60,19 @@
                     </div>
                     <div class="col-6 col-12-xsmall">
                         <label for="nom_enfant">Nom de l'enfant</label>
-                        <input type="text" name="nom_enfant" id="nom_enfant" value="" placeholder="Nom de l'enfant" />
+                        <input type="text" name="nom_enfant" id="nom_enfant" value="" placeholder="Nom de l'enfant" required/>
                     </div>
                     <div class="col-6 col-12-xsmall">
                         <label for="age_enfant">Age de l'enfant</label>
-                        <input type="number" name="age_enfant" id="age_enfant" value="" placeholder="Âge de l'enfant" />
+                        <input type="number" name="age_enfant" id="age_enfant" value="" placeholder="Âge de l'enfant" min="1" max="17" required/>
                     </div>
-                    <div class="col-12">
+                    <div class="col-6 col-12-xsmall">
                         <label for="nom_parent">Nom du parent</label>
-                        <input type="text" name="nom_parent" id="nom_parent" value="" placeholder="Nom du parent" />
+                        <input type="text" name="nom_parent" id="nom_parent" value="" placeholder="Nom du parent" required/>
+                    </div>
+                    <div class="col-6 col-12-xsmall">
+                        <label for="tel">Tel du parent</label>
+                        <input type="tel" name="tel" id="tel" pattern="[0-9]{8}" required/>
                     </div>
                     <div class="col-12">
                         <label for="conditions_medicales">Conditions médicales</label>
@@ -97,15 +101,15 @@
                         <label for="location">Lieu</label>
                     </div>
                     <div class="col-4 col-12-small">
-                        <input type="radio" id="club-gammarth" name="location" checked>
+                        <input type="radio" id="club-gammarth" name="location" value="club-gammarth" checked>
                         <label for="club-gammarth">Le Club</label>
                     </div>
                     <div class="col-4 col-12-small">
-                        <input type="radio" id="a-domicile" name="location">
+                        <input type="radio" id="a-domicile" name="location" value="a-domicile">
                         <label for="a-domicile">À domicile</label>
                     </div>
                     <div class="col-4 col-12-small">
-                        <input type="radio" id="autre" name="location">
+                        <input type="radio" id="autre" name="location" value="autre">
                         <label for="autre">Autre</label>
                     </div>
                     <div class="col-6">
