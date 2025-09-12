@@ -1,5 +1,7 @@
 from flask import Blueprint, render_template, request, jsonify
 from .form import ContactForm
+from .models import Client
+from . import db
 from . import limiter
 
 bp = Blueprint('main', __name__)
@@ -23,10 +25,23 @@ def contact_submit():
     
     form = ContactForm(data=data, meta={"csrf": False})
     if form.validate():
-        # Access validated data
-        cleaned_data = {field.name: field.data for field in form}
-        print("Form data:", cleaned_data)
-        return jsonify({"status": "success", "message": "Form received!"})
+        # Create a new Client instance
+        client = Client(
+            nom_enfant=form.nom_enfant.data,
+            age_enfant=form.age_enfant.data,
+            nom_parent=form.nom_parent.data,
+            tel=form.tel.data,
+            conditions_medicales=form.conditions_medicales.data,
+            schedule=form.schedule.data,
+            objectifs=form.objectifs.data,
+            location=form.location.data,
+            more_info=form.more_info.data
+        )
+        # Add to database session and commit
+        db.session.add(client)
+        db.session.commit()
+        
+        return jsonify({"status": "success", "message": "Client saved successfully!"})
     else:
         # Return validation errors
         return jsonify({"status": "error", "errors": form.errors}), 400
